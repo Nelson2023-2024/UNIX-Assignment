@@ -3,12 +3,18 @@
 # Function to remove zero-length files
 remove_zero_length_files() {
     local dir=$1  # Assign the first argument to the variable dir
+    
+    # Step 1: Check if the directory exists
+    echo
+    echo "Step 1"
     if [[ ! -d "$dir" ]]; then  # Check if the directory does not exist
         echo "Error: Directory $dir does not exist."  # Print an error message
         exit 1  # Exit the script with a status of 1 (error)
     fi
 
-    # Find and delete zero-length files
+    # Step 2: Find and delete zero-length files
+    echo
+    echo "Step 2"
     find "$dir" -type f -size 0 -print -delete
     echo "Removed all zero-length files in directory: $dir"  # Print a success message
 }
