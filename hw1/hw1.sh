@@ -1,42 +1,53 @@
 #!/usr/bin/bash
 
-#check if file exists
-if [[ -f $1 ]]; then #-f or -eflag is used to check wherther the file eists or not
-    echo "File  $1 exists and it's a regular file"
+# Step 1: Check if the file exists and is a regular file
+echo
+echo "Step 1"
+if [[ -f $1 ]]; then
+    echo "File $1 exists and it's a regular file."
 else
-    echo "File $1 doesn't exist"   
+    echo "File $1 doesn't exist or it's not a regular file."
 fi
 
-#checks for read permision
-if [[ -r $1 ]]; then #-f or -eflag is used to check wherther the file eists or not
-    echo "File  $1 has read permissions"
+# Step 2: Check for read permission
+echo
+echo "Step 2"
+if [[ -r $1 ]]; then
+    echo "File $1 has read permission."
 else
-    echo "File $1 doesn't have read permission"   
+    echo "File $1 doesn't have read permission."
 fi
 
-#checks for write permision
-if [[ -r $1 ]]; then #-f or -eflag is used to check wherther the file eists or not
-    echo "File  $1 has write permissions"
+# Step 3: Check for write permission
+echo
+echo "Step 3"
+if [[ -w $1 ]]; then
+    echo "File $1 has write permission."
 else
-    echo "File $1 doesn't have write permission"   
+    echo "File $1 doesn't have write permission."
 fi
 
-#checks for execute permision
-if [[ -x $1 ]]; then #-f or -eflag is used to check wherther the file eists or not
-    echo "File  $1 has excecute permissions"
+# Step 4: Check for execute permission
+echo
+echo "Step 4"
+if [[ -x $1 ]]; then
+    echo "File $1 has execute permission."
 else
-    echo "File $1 doesn't have execute permission"   
+    echo "File $1 doesn't have execute permission."
 fi
 
-#check if its a block special file (images)
-if [[ -b $1 ]]; then  
-    echo "$1 is a block special file (other files)"
+# Step 5: Check if it's a block special file (e.g., image files)
+echo
+echo "Step 5"
+if [[ -b $1 ]]; then
+    echo "$1 is a block special file (e.g., image files)."
 fi
 
-#check if its a directory
+# Step 6: Check if it's a directory
+echo
+echo "Step 6"
 if [[ -d $1 ]]; then
-    echo "Directory $1 exists"
+    echo "Directory $1 exists."
 else
-    echo "Directory $1 doesn't exist"
-    
+    echo "Directory $1 doesn't exist or it's not a directory."
 fi
