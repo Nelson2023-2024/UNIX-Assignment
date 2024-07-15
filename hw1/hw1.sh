@@ -6,7 +6,7 @@ echo "Step 1"
 if [[ -f $1 ]]; then
     echo "File $1 exists and it's a regular file."
 else
-    echo "File $1 doesn't exist or it's not a regular file."
+    echo "File $1 doesn't exist or it's not a regular file." 
 fi
 
 # Step 2: Check for read permission
@@ -36,16 +36,9 @@ else
     echo "File $1 doesn't have execute permission."
 fi
 
-# Step 5: Check if it's a block special file (e.g., image files)
+# Step 5: Check if it's a directory
 echo
 echo "Step 5"
-if [[ -b $1 ]]; then
-    echo "$1 is a block special file (e.g., image files)."
-fi
-
-# Step 6: Check if it's a directory
-echo
-echo "Step 6"
 if [[ -d $1 ]]; then
     echo "Directory $1 exists."
 else

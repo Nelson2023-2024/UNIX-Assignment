@@ -7,6 +7,7 @@ remove_zero_length_files() {
     # Step 1: Check if the directory exists
     echo
     echo "Step 1"
+    echo "Check if the Directory $dir does not exist." 
     if [[ ! -d "$dir" ]]; then  # Check if the directory does not exist
         echo "Error: Directory $dir does not exist."  # Print an error message
         exit 1  # Exit the script with a status of 1 (error)
